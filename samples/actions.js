@@ -1,9 +1,3 @@
-/** 
- * yoges 20180402 add module to writeResult to actions.html file
- * var tools = require('./tools');
- * console.log(typeof tools.foo); // => 'function'
- */
-
 /**
  * Print out Verse API data for all the action samples
  */
@@ -11,7 +5,7 @@ window.addEventListener("message", function (event) {
   // Add check for the event origin here
   console.log(event);
 
-  document.getElementById("status").innerHTML = "";
+  // document.getElementById("status").innerHTML = "";
 
   /**
    * Message from Verse to check whether your web application is ready.
@@ -31,13 +25,16 @@ window.addEventListener("message", function (event) {
   var rawdata = JSON.stringify(event.data.verseApiData);
   var link_limit = 3;
   var email_content_length_limit = 1000;
-
+  var api = []; 
+  api.push("https://openwhisk.ng.bluemix.net/api/v1/web/ecodadmi%40us.ibm.com_cheoksv-dev/default/cheok-nlu.json");
+  api.push("https://openwhisk.ng.bluemix.net/api/v1/web/ecodadmi%40us.ibm.com_cheoksv-dev/default/cheok-ta.json");
+  // start of processEmail function call -------------------------------------------
   processEmail(rawdata, function (email) {
     if (email) {
       console.log('processed.. sending to Watson service');
 
-      jsonNode.innerText = 'Sender: ' + email.mailContent.context.sender.displayName + '\n';
-      jsonNode.innerText += 'Subject: ' + email.mailContent.context.subject + '\n\n';
+      // jsonNode.innerText = 'Sender: ' + email.mailContent.context.sender.displayName + '\n';
+      // jsonNode.innerText += 'Subject: ' + email.mailContent.context.subject + '\n\n';
 
       var data = {
         "textToAnalyze": email.mailContent.context.body.substr(0, email_content_length_limit),
@@ -51,9 +48,9 @@ window.addEventListener("message", function (event) {
         })
         .done(function (result) {
 
-          jsonNode.innerText += 'Original email content: \n' + email.mailContent.context.body + '\n';
-          jsonNode.innerText += 'content analysis result:\n' + JSON.stringify(result, null, 2) + '\n\n';
-          writeResult(result,email);
+          // jsonNode.innerText += 'Original email content: \n' + email.mailContent.context.body + '\n';
+          // jsonNode.innerText += 'content analysis result:\n' + JSON.stringify(result, null, 2) + '\n\n';
+          writeResult(result, email);
 
           //process the links
           for (var i in email.links) {
@@ -68,8 +65,8 @@ window.addEventListener("message", function (event) {
               })
               .done(function (result) {
 
-                jsonNode.innerText += 'Link(s) analysis result:\n' + result.url + '\n';
-                jsonNode.innerText += JSON.stringify(result.res, null, 2) + '\n\n';
+                // jsonNode.innerText += 'Link(s) analysis result:\n' + result.url + '\n';
+                // jsonNode.innerText += JSON.stringify(result.res, null, 2) + '\n\n';
 
               })
           }
@@ -77,10 +74,10 @@ window.addEventListener("message", function (event) {
         })
     } else {
       console.log('still no content yet..');
-      jsonNode.innerText = "Processing...";
+      // jsonNode.innerText = "Processing...";
     }
   })
-
+  // end of processEmail function call -------------------------------------------
   function processEmail(a, cb) {
     return new Promise(function (resolve, reject) {
       //get all the links from href tag
@@ -114,25 +111,16 @@ window.addEventListener("message", function (event) {
     })
   }
 
-  function writeResult(result,email) {
-    console.log("x" + result);
-    // document.getElementById("body").innerHTML = "";
+  function writeResult(result, email) {
+    console.log("writing result..." + result);
     document.getElementById("mailSubject").innerHTML = email.mailContent.context.subject;
-    document.getElementById("mailSender").innerHTML = "<em>From: " + email.mailContent.context.sender.displayName+"</em>";
-    document.getElementById("keywordSummary").innerHTML = "<table class=\"table justify-content-between align-items-center\"><tbody class=\"justify-content-between align-items-center\" id=\"mailKeywords\">"
-    // document.getElementById("mailBody").innerHTML = email.mailContent.context.body;
-    // jsonNode.innerText = 'Sender: ' + email.mailContent.context.sender.displayName + '\n';
-    // jsonNode.innerText += 'Subject: ' + email.mailContent.context.subject + '\n\n';
-    // document.getElementById("kw0").innerHTML = result.keywords[0].text;
-    // var fixedRelevance = result.keywords[0].relevance;
-    // fixedRelevance = fixedRelevance * 100;
-    // document.getElementById("rel0").innerHTML = ((result.keywords[0].relevance)*100).toFixed(2);
-    
-    // for(let i=0; i<result.keywords.length;i++){
-      for(let i=0; i<5; i++){
-      document.getElementById("keywordSummary").innerHTML += "<tr><td>"+result.keywords[i].text+"</td>";
-      document.getElementById("keywordSummary").innerHTML += "<td class=\"badge badge-primary badge-pill\">"+((result.keywords[i].relevance)*100).toFixed(2)+"</td></tr>";
+    document.getElementById("mailSender").innerHTML = "<h5>From: " + email.mailContent.context.sender.displayName + " Overall emotion: "+result.emotion+"</h5>";
+    document.getElementById("keywordSummary").innerHTML = "<h6>Keywords and Relevance</h6>";
+    document.getElementById("keywordSummary").innerHTML += "<ul class=\"list-group\">";
+    for (let i = 0; i < 5; i++) {
+      document.getElementById("keywordSummary").innerHTML += "<li class=\"list-group-item\">" + result.keywords[i].text + " <span style=\"background-color: #379ef5;\" class=\"badge\">" + ((result.keywords[i].relevance) * 100).toFixed(2) + "%</span></li>";
     }
+    document.getElementById("keywordSummary").innerHTML += "</ul>";
   }
 
 }, false);
