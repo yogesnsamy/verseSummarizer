@@ -29,8 +29,8 @@
             {
               "id": "com.ibm.verse.ext.mail.read.action",
               "path": "mail.read",
-              "text": "Mail Read Action",
-              "title": "Mail Read Action",
+              "text": "Verse Summarizer",
+              "title": "Verse Summarizer",
               "location": "window",
               "renderParams": {
                 "width": "900",

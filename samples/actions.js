@@ -116,9 +116,10 @@ window.addEventListener("message", function (event) {
 
   function writeResult(result,email) {
     console.log("x" + result);
-    document.getElementById("body").innerHTML = "";
+    // document.getElementById("body").innerHTML = "";
     document.getElementById("mailSubject").innerHTML = email.mailContent.context.subject;
     document.getElementById("mailSender").innerHTML = "<em>From: " + email.mailContent.context.sender.displayName+"</em>";
+    document.getElementById("keywordSummary").innerHTML = "<table class=\"table justify-content-between align-items-center\"><tbody class=\"justify-content-between align-items-center\" id=\"mailKeywords\">"
     // document.getElementById("mailBody").innerHTML = email.mailContent.context.body;
     // jsonNode.innerText = 'Sender: ' + email.mailContent.context.sender.displayName + '\n';
     // jsonNode.innerText += 'Subject: ' + email.mailContent.context.subject + '\n\n';
@@ -127,9 +128,10 @@ window.addEventListener("message", function (event) {
     // fixedRelevance = fixedRelevance * 100;
     // document.getElementById("rel0").innerHTML = ((result.keywords[0].relevance)*100).toFixed(2);
     
-    for(let i=0; i<result.keywords.length;i++){
-      document.getElementById("kw"+i).innerHTML = "<td id=\"kw0\">"+result.keywords[i].text+"</td>";
-      document.getElementById("rel"+i).innerHTML = "<td id=\"rel0\" class=\"badge badge-primary badge-pill\">"+((result.keywords[i].relevance)*100).toFixed(2)+"</td>";
+    // for(let i=0; i<result.keywords.length;i++){
+      for(let i=0; i<5; i++){
+      document.getElementById("keywordSummary").innerHTML += "<tr><td>"+result.keywords[i].text+"</td>";
+      document.getElementById("keywordSummary").innerHTML += "<td class=\"badge badge-primary badge-pill\">"+((result.keywords[i].relevance)*100).toFixed(2)+"</td></tr>";
     }
   }
 
