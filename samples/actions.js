@@ -114,7 +114,7 @@ window.addEventListener("message", function (event) {
   function writeResult(result, email) {
     console.log("writing result..." + result);
     document.getElementById("mailSubject").innerHTML = email.mailContent.context.subject;
-    document.getElementById("mailSender").innerHTML = "<h5>From: " + email.mailContent.context.sender.displayName + " Overall emotion: "+result.emotion+"</h5>";
+    document.getElementById("mailSender").innerHTML = "<h6><em>From: " + email.mailContent.context.sender.displayName + " . Overall emotion: <i class=\"far fa-smile\"></i></em></h6>";
     document.getElementById("keywordSummary").innerHTML = "<h6>Keywords and Relevance</h6>";
     document.getElementById("keywordSummary").innerHTML += "<ul class=\"list-group\">";
     for (let i = 0; i < 5; i++) {
