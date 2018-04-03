@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Verse Developer Action Sample Ccak was here!</title>
+  <title>Verse Summarizer in Action</title>
   <style>
     pre {
       margin-bottom: 50px;
@@ -11,88 +11,103 @@
   </style>
   <script src="jquery.min.js"></script>
   <script src="actions.js"></script>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
+  <link href="actions.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- will use the new tech if browser supports, else won't use -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
 </head>
 
 <body>
   <main role="main">
+    <!-- <div class="container">
+      <% if(error && error.length > 0){ %>
+        <div class="alert alert-danger" role="alert">
+          <%= error %>
+        </div>
+        <% } %>
+          <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+              <%= success %>
+            </div>
+            <% } %>
+    </div> -->
+
+    <div id="landing-header">
+      <h1>Welcome to the Verse Summarizer</h1>
+      <h3>Please hold on while it works its magic.</h3>
+      <a href="#" class="btn btn-lg btn-success" onclick="window.close();">Close window</a>
+    </div>
+
+    <ul class="slideshow">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <!-- <div class="jumbotron"> -->
     <div class="container">
-      <h1 class="display-6" id="mailSubject">Subject</h1>
-      <!-- <h1 class="display-7" id="mailSender">xxx From xxx</h1> -->
+      <h1 class="display-6" id="mailSubject"></h1>
       <table class="table justify-content-between align-items-center">
-        <!-- <caption>List of keywords</caption> -->
         <tbody class="justify-content-between align-items-center" id="mailKeywords">
           <tr>
             <!-- <th scope="row">1</th> -->
-            <td id="kw0">KW1</td>
-            <td id="rel0" class="badge badge-primary badge-pill">%1</td>
-            <td id="kw1">KW1</td>
-            <td id="rel1" class="badge badge-primary badge-pill">%1</td>
+            <td id="kw0"></td>
+            <td id="rel0" class="badge badge-primary badge-pill"></td>
+            <td id="kw1"></td>
+            <td id="rel1" class="badge badge-primary badge-pill"></td>
           </tr>
           <tr>
             <!-- <th scope="row">2</th> -->
-            <td id="kw2">KW2</td>
-            <td id="rel2" class="badge badge-primary badge-pill">%2</td>
-            <td id="kw3">KW1</td>
-            <td id="rel3" class="badge badge-primary badge-pill">%1</td>
+            <td id="kw2"></td>
+            <td id="rel2" class="badge badge-primary badge-pill"></td>
+            <td id="kw3"></td>
+            <td id="rel3" class="badge badge-primary badge-pill"></td>
           </tr>
           <tr>
             <!-- <th scope="row">3</th> -->
-            <td id="kw4">KW3</td>
-            <td id="rel4" class="badge badge-primary badge-pill">%3</td>
+            <td id="kw4"></td>
+            <td id="rel4" class="badge badge-primary badge-pill"></td>
+            <td id="kw5"></td>
+            <td id="rel5" class="badge badge-primary badge-pill"></td>
           </tr>
 
         </tbody>
       </table>
 
-      <!-- <p>
-            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a>
-          </p> -->
+
     </div>
     </div>
 
     <div class="container">
       <p>
-        <a class="btn btn-secondary" href="#" role="button">View original email &raquo;</a>
+        <a class="btn btn-secondary" href="#" role="button">Close this window</a>
       </p>
-      <!-- Example row of columns -->
+
       <div class="row">
         <div class="col-md-10">
-          <!-- <h2>Heading</h2> -->
           <p id="mailSender">
-            <em>From</em>
+            <em></em>
           </p>
-          <p id="mailBody">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-            nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio
-            dui. </p>
+          <p id="mailBody"></p>
 
         </div>
       </div>
-
-      <hr>
-
-
-      <!-- /container -->
+      <div id="status">Verse Summarizer is working its magic...please hold on.</div>
+      <div id="query-str"></div>
+      <div id="messages">
+        <pre id='json'></pre>
+      </div>
 
   </main>
 
   <footer class="container">
     <p>&copy; Verse Summarizer 2017-2018</p>
   </footer>
-
-
-  </div>
-  <h2>Verse Developer Action Sample</h2>
-  <div id="status">Waiting for messages from Verse.</div>
-  <div id="query-str"></div>
-  <div id="messages">
-    Messages received: cicak was here!
-    <hr>
-    <pre id='json'></pre>
   </div>
 
 </body>
