@@ -116,9 +116,10 @@ window.addEventListener("message", function (event) {
 
   function writeResult(result,email) {
     console.log("x" + result);
+    document.getElementById("body").innerHTML = "";
     document.getElementById("mailSubject").innerHTML = email.mailContent.context.subject;
     document.getElementById("mailSender").innerHTML = "<em>From: " + email.mailContent.context.sender.displayName+"</em>";
-    document.getElementById("mailBody").innerHTML = email.mailContent.context.body;
+    // document.getElementById("mailBody").innerHTML = email.mailContent.context.body;
     // jsonNode.innerText = 'Sender: ' + email.mailContent.context.sender.displayName + '\n';
     // jsonNode.innerText += 'Subject: ' + email.mailContent.context.subject + '\n\n';
     // document.getElementById("kw0").innerHTML = result.keywords[0].text;

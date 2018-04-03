@@ -10,7 +10,6 @@
     }
   </style>
   <script src="jquery.min.js"></script>
-  <script src="actions.js"></script>
   <link href="actions.css" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
   <!-- will use the new tech if browser supports, else won't use -->
@@ -19,23 +18,60 @@
 
 <body>
   <main role="main">
-    <!-- <div class="container">
-      <% if(error && error.length > 0){ %>
-        <div class="alert alert-danger" role="alert">
-          <%= error %>
-        </div>
-        <% } %>
-          <% if(success && success.length > 0){ %>
-            <div class="alert alert-success" role="alert">
-              <%= success %>
-            </div>
-            <% } %>
-    </div> -->
-
     <div id="landing-header">
-      <h1>Welcome to the Verse Summarizer</h1>
+      <h3>Welcome to the</h3>
+      <h1>Verse Summarizer</h1>
       <h3>Please hold on while it works its magic.</h3>
       <a href="#" class="btn btn-lg btn-success" onclick="window.close();">Close window</a>
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <!-- <div class="jumbotron"> -->
+      <div class="container">
+        <h1 class="display-6" id="mailSubject"></h1>
+        <table class="table justify-content-between align-items-center">
+          <tbody class="justify-content-between align-items-center" id="mailKeywords">
+            <tr>
+              <!-- <th scope="row">1</th> -->
+              <td id="kw0"></td>
+              <td id="rel0" class="badge badge-primary badge-pill"></td>
+              <td id="kw1"></td>
+              <td id="rel1" class="badge badge-primary badge-pill"></td>
+            </tr>
+            <tr>
+              <!-- <th scope="row">2</th> -->
+              <td id="kw2"></td>
+              <td id="rel2" class="badge badge-primary badge-pill"></td>
+              <td id="kw3"></td>
+              <td id="rel3" class="badge badge-primary badge-pill"></td>
+            </tr>
+            <tr>
+              <!-- <th scope="row">3</th> -->
+              <td id="kw4"></td>
+              <td id="rel4" class="badge badge-primary badge-pill"></td>
+              <td id="kw5"></td>
+              <td id="rel5" class="badge badge-primary badge-pill"></td>
+            </tr>
+
+          </tbody>
+        </table>
+
+
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10">
+            <p id="mailSender">
+              <em></em>
+            </p>
+            <p id="mailBody"></p>
+
+          </div>
+        </div>
+        <div id="status"></div>
+        <div id="query-str"></div>
+        <div id="messages">
+          <pre id='json'></pre>
+        </div>
+      </div>
     </div>
 
     <ul class="slideshow">
@@ -45,63 +81,46 @@
       <li></li>
       <li></li>
     </ul>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <!-- <div class="jumbotron"> -->
-    <div class="container">
-      <h1 class="display-6" id="mailSubject"></h1>
-      <table class="table justify-content-between align-items-center">
-        <tbody class="justify-content-between align-items-center" id="mailKeywords">
-          <tr>
-            <!-- <th scope="row">1</th> -->
-            <td id="kw0"></td>
-            <td id="rel0" class="badge badge-primary badge-pill"></td>
-            <td id="kw1"></td>
-            <td id="rel1" class="badge badge-primary badge-pill"></td>
-          </tr>
-          <tr>
-            <!-- <th scope="row">2</th> -->
-            <td id="kw2"></td>
-            <td id="rel2" class="badge badge-primary badge-pill"></td>
-            <td id="kw3"></td>
-            <td id="rel3" class="badge badge-primary badge-pill"></td>
-          </tr>
-          <tr>
-            <!-- <th scope="row">3</th> -->
-            <td id="kw4"></td>
-            <td id="rel4" class="badge badge-primary badge-pill"></td>
-            <td id="kw5"></td>
-            <td id="rel5" class="badge badge-primary badge-pill"></td>
-          </tr>
-
-        </tbody>
-      </table>
 
 
     </div>
-    </div>
 
-    <div class="container">
-      <p>
-        <a class="btn btn-secondary" href="#" role="button">Close this window</a>
-      </p>
 
-      <div class="row">
-        <div class="col-md-10">
-          <p id="mailSender">
-            <em></em>
-          </p>
-          <p id="mailBody"></p>
 
-        </div>
-      </div>
-      <div id="status">Verse Summarizer is working its magic...please hold on.</div>
-      <div id="query-str"></div>
-      <div id="messages">
-        <pre id='json'></pre>
-      </div>
 
   </main>
 
@@ -109,7 +128,7 @@
     <p>&copy; Verse Summarizer 2017-2018</p>
   </footer>
   </div>
-
+  <script src="actions.js"></script>
 </body>
 
 </html>

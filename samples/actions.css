@@ -25,7 +25,8 @@ body {
 /* We also need to change the h1 text color to white: */
 
 #landing-header h1 {
-  color: #fff;
+  /* color: #fff; */
+  color: #2196f3
 }
 
 /* The unordered list and its list items that we added to landing.ejs need some styling to make them fit across the entire page
@@ -66,26 +67,27 @@ body {
 /* Each list item needs a background-image and the last four need an animation-delay (this way they all fire off one after the other in ten second intervals): */
 
 .slideshow li:nth-child(1) {
-  background-image: url(http://i.imgur.com/K3mPv14.jpg)
+  /* background-image: url(http://i.imgur.com/lxauaDH-hC8.jpg) */
+  background-image: url(img/src/adam-morse-404393-unsplash.jpg);
 }
 
 .slideshow li:nth-child(2) {
-  background-image: url(http://i.imgur.com/SBEmFpv.jpg);
+  background-image: url(img/src/david-cohen-122135-unsplash.jpg);
   animation-delay: 10s;
 }
 
 .slideshow li:nth-child(3) {
-  background-image: url(http://i.imgur.com/emvhOnb.jpg);
+  background-image: url(img/src/fuse-brussels-273772-unsplash.jpg);
   animation-delay: 20s;
 }
 
 .slideshow li:nth-child(4) {
-  background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
+  background-image: url(img/src/marko-balazic-320374-unsplash.jpg);
   animation-delay: 30s;
 }
 
 .slideshow li:nth-child(5) {
-  background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
+  background-image: url(img/src/scott-webb-199470-unsplash.jpg);
   animation-delay: 40s;
 }
 
