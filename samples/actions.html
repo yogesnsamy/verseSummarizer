@@ -1,0 +1,100 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verse Developer Action Sample Ccak was here!</title>
+  <style>
+    pre {
+      margin-bottom: 50px;
+    }
+  </style>
+  <script src="jquery.min.js"></script>
+  <script src="actions.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+</head>
+
+<body>
+  <main role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <!-- <div class="jumbotron"> -->
+    <div class="container">
+      <h1 class="display-6" id="mailSubject">Subject</h1>
+      <!-- <h1 class="display-7" id="mailSender">xxx From xxx</h1> -->
+      <table class="table justify-content-between align-items-center">
+        <!-- <caption>List of keywords</caption> -->
+        <tbody class="justify-content-between align-items-center" id="mailKeywords">
+          <tr>
+            <!-- <th scope="row">1</th> -->
+            <td id="kw0">KW1</td>
+            <td id="rel0" class="badge badge-primary badge-pill">%1</td>
+            <td id="kw1">KW1</td>
+            <td id="rel1" class="badge badge-primary badge-pill">%1</td>
+          </tr>
+          <tr>
+            <!-- <th scope="row">2</th> -->
+            <td id="kw2">KW2</td>
+            <td id="rel2" class="badge badge-primary badge-pill">%2</td>
+            <td id="kw3">KW1</td>
+            <td id="rel3" class="badge badge-primary badge-pill">%1</td>
+          </tr>
+          <tr>
+            <!-- <th scope="row">3</th> -->
+            <td id="kw4">KW3</td>
+            <td id="rel4" class="badge badge-primary badge-pill">%3</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <!-- <p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a>
+          </p> -->
+    </div>
+    </div>
+
+    <div class="container">
+      <p>
+        <a class="btn btn-secondary" href="#" role="button">View original email &raquo;</a>
+      </p>
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-10">
+          <!-- <h2>Heading</h2> -->
+          <p id="mailSender">
+            <em>From</em>
+          </p>
+          <p id="mailBody">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+            nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio
+            dui. </p>
+
+        </div>
+      </div>
+
+      <hr>
+
+
+      <!-- /container -->
+
+  </main>
+
+  <footer class="container">
+    <p>&copy; Verse Summarizer 2017-2018</p>
+  </footer>
+
+
+  </div>
+  <h2>Verse Developer Action Sample</h2>
+  <div id="status">Waiting for messages from Verse.</div>
+  <div id="query-str"></div>
+  <div id="messages">
+    Messages received: cicak was here!
+    <hr>
+    <pre id='json'></pre>
+  </div>
+
+</body>
+
+</html>

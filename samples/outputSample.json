@@ -1,0 +1,85 @@
+{
+  "usage": {
+    "text_units": 1,
+    "text_characters": 343,
+    "features": 1
+  },
+  "language": "en",
+  "keywords": [
+    {
+      "text": "Global Techline Center",
+      "sentiment": {
+        "score": 0,
+        "label": "neutral"
+      },
+      "relevance": 0.932361,
+      "emotion": {
+        "disgust": 0.013493,
+        "joy": 0.103848,
+        "anger": 0.088387,
+        "fear": 0.04479,
+        "sadness": 0.169899
+      }
+    },
+    {
+      "text": "Petaling Jaya Selangor",
+      "sentiment": {
+        "score": 0,
+        "label": "neutral"
+      },
+      "relevance": 0.854174,
+      "emotion": {
+        "disgust": 0.078108,
+        "joy": 0.191139,
+        "anger": 0.091797,
+        "fear": 0.08519,
+        "sadness": 0.141719
+      }
+    },
+    {
+      "text": "NarayasamyWatson Customer Engagement",
+      "sentiment": {
+        "score": 0,
+        "label": "neutral"
+      },
+      "relevance": 0.708,
+      "emotion": {
+        "disgust": 0.047058,
+        "joy": 0.490916,
+        "anger": 0.048297,
+        "fear": 0.038946,
+        "sadness": 0.138284
+      }
+    },
+    {
+      "text": "MALAYSIAVisit Techline",
+      "sentiment": {
+        "score": 0,
+        "label": "neutral"
+      },
+      "relevance": 0.684348,
+      "emotion": {
+        "disgust": 0.084267,
+        "joy": 0.246153,
+        "anger": 0.105778,
+        "fear": 0.069002,
+        "sadness": 0.121828
+      }
+    },
+    {
+      "text": "Plaza IBM",
+      "sentiment": {
+        "score": 0,
+        "label": "neutral"
+      },
+      "relevance": 0.479299,
+      "emotion": {
+        "disgust": 0.022889,
+        "joy": 0.037551,
+        "anger": 0.037262,
+        "fear": 0.031685,
+        "sadness": 0.043788
+      }
+    }
+  ]
+}

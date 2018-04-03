@@ -1,0 +1,25 @@
+{  "name": "IBM Verse Developer Browser Extension",
+  "version": "1.1.0",
+  "manifest_version": 2,
+  "content_scripts": [ {
+    "js": [ "contentscript.js"],
+    "matches": [
+      "https://mail.notes.na.collabserv.com/verse*",
+      "https://mail.notes.ap.collabserv.com/verse*",
+      "https://mail.notes.ce.collabserv.com/verse*"
+    ],
+    "run_at": "document_start"
+  }],
+  "web_accessible_resources": [
+    "page.js",
+    "applications.json",
+    "samples/templatedLink.html",
+    "samples/actions.html",
+    "custom-name-picker/index.html",
+    "hook-before-send/index.html",
+    "hook-before-send-disable/index.html"
+  ]
+}
+
+
+
