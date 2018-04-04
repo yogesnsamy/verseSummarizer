@@ -25,7 +25,7 @@ window.addEventListener("message", function (event) {
   var rawdata = JSON.stringify(event.data.verseApiData);
   var link_limit = 3;
   var email_content_length_limit = 1000;
-  var api = []; 
+  var api = [];
   api.push("https://openwhisk.ng.bluemix.net/api/v1/web/ecodadmi%40us.ibm.com_cheoksv-dev/default/cheok-nlu.json");
   api.push("https://openwhisk.ng.bluemix.net/api/v1/web/ecodadmi%40us.ibm.com_cheoksv-dev/default/cheok-ta.json");
   // start of processEmail function call -------------------------------------------
@@ -113,10 +113,10 @@ window.addEventListener("message", function (event) {
 
   function writeResult(result, email) {
     console.log("writing result..." + result);
-    document.getElementById("mailSubject").innerHTML = email.mailContent.context.subject;
-    document.getElementById("mailSender").innerHTML = "<h6><em>From: " + email.mailContent.context.sender.displayName + " . Overall emotion: <i class=\"far fa-smile\"></i></em></h6>";
-    document.getElementById("keywordSummary").innerHTML = "<h6>Keywords and Relevance</h6>";
+    document.getElementById("mailSubject").innerHTML = "<strong>"+email.mailContent.context.sender.displayName+":</strong> "+email.mailContent.context.subject;// +  " <i class=\"far fa-smile\"></i>";
+    // document.getElementById("mailSender").innerHTML = "<h5>From: " + email.mailContent.context.sender.displayName + "</h5>";
     document.getElementById("keywordSummary").innerHTML += "<ul class=\"list-group\">";
+    document.getElementById("keywordSummary").innerHTML += "<li class=\"list-group-item\"><strong>Keywords and Relevance <span style=\"background-color: #379ef5;\" class=\"badge\">   %   </strong></span></li>";
     for (let i = 0; i < 5; i++) {
       document.getElementById("keywordSummary").innerHTML += "<li class=\"list-group-item\">" + result.keywords[i].text + " <span style=\"background-color: #379ef5;\" class=\"badge\">" + ((result.keywords[i].relevance) * 100).toFixed(2) + "%</span></li>";
     }

@@ -33,7 +33,7 @@
               "title": "Verse Summarizer",
               "location": "window",
               "renderParams": {
-                "width": "900",
+                "width": "500",
                 "height": "500"
               }
             }
