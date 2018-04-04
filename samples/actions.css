@@ -72,22 +72,22 @@ body {
 }
 
 .slideshow li:nth-child(2) {
-  background-image: url(img/src/david-cohen-122135-unsplash.jpg);
+  background-image: url(img/src/adam-morse-404393-unsplash.jpg);
   animation-delay: 10s;
 }
 
 .slideshow li:nth-child(3) {
-  background-image: url(img/src/fuse-brussels-273772-unsplash.jpg);
+  background-image: url(img/src/adam-morse-404393-unsplash.jpg);
   animation-delay: 20s;
 }
 
 .slideshow li:nth-child(4) {
-  background-image: url(img/src/marko-balazic-320374-unsplash.jpg);
+  background-image: url(img/src/adam-morse-404393-unsplash.jpg);
   animation-delay: 30s;
 }
 
 .slideshow li:nth-child(5) {
-  background-image: url(img/src/scott-webb-199470-unsplash.jpg);
+  background-image: url(img/src/adam-morse-404393-unsplash.jpg);
   animation-delay: 40s;
 }
 
