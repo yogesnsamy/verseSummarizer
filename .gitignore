@@ -1,6 +1,4 @@
-/node_modules;
-~$bugsEnhancementTracking.xlsx;
-/samples/bootstrap.min.css
+/node_modules
+~$bugsEnhancementTracking.xlsx
 /samples/fontawesome/
 /samples/sampleResult.json
-/src/
