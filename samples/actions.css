@@ -19,7 +19,7 @@ body {
   z-index: 1;
   position: relative;
   text-align: center;
-  padding-top: 10vh;
+  padding-top: 1vh;
 }
 
 /* We also need to change the h1 text color to white: */
