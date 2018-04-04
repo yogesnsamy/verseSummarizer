@@ -57,23 +57,23 @@ window.addEventListener("message", function (event) {
           writeResult(result, email);
 
           //process the links
-          for (var i in email.links) {
-            data = {
-              "textToAnalyze": email.links[i],
-              "type": 'url'
-            }
-            $.ajax({
-                url: "https://openwhisk.ng.bluemix.net/api/v1/web/ecodadmi%40us.ibm.com_cheoksv-dev/default/cheok-nlu.json",
-                data,
-                method: 'POST'
-              })
-              .done(function (result) {
+          // for (var i in email.links) {
+          //   data = {
+          //     "textToAnalyze": email.links[i],
+          //     "type": 'url'
+          //   }
+          //   $.ajax({
+          //       url: "https://openwhisk.ng.bluemix.net/api/v1/web/ecodadmi%40us.ibm.com_cheoksv-dev/default/cheok-nlu.json",
+          //       data,
+          //       method: 'POST'
+          //     })
+          //     .done(function (result) {
 
-                // jsonNode.innerText += 'Link(s) analysis result:\n' + result.url + '\n';
-                // jsonNode.innerText += JSON.stringify(result.res, null, 2) + '\n\n';
+          //       // jsonNode.innerText += 'Link(s) analysis result:\n' + result.url + '\n';
+          //       // jsonNode.innerText += JSON.stringify(result.res, null, 2) + '\n\n';
 
-              })
-          }
+          //     })
+          // }
 
         })
     } else {
