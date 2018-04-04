@@ -14,6 +14,7 @@
   <link href="actions.css" rel="stylesheet">
   <link href="bootstrap.min.css" rel="stylesheet">
   <!-- <link rel="stylesheet" href="./fontawesome/"> -->
+  <script src="actions.js"></script>
 </head>
 
 <body>
@@ -21,7 +22,7 @@
     <h3>Verse Summarizer</h3>
     <h5 id="mailSubject">Please wait while it works its magic.</h5>
     <!-- <p id="mailSender"></p> -->
-<div id="keywordSummary"></div>    
+    <div id="keywordSummary"></div>
     <a href="#" class="btn btn-primary btn-sm" onclick="window.close();">Close this window</a>
   </div>
 
@@ -32,6 +33,7 @@
     <li></li>
     <li></li>
   </ul>
+  <pre id='json'></pre>
 
   <!-- backend:
   <div id="status"></div>
@@ -39,8 +41,8 @@
   <div id="messages">
     <pre id='json'></pre>
   </div> -->
-  
-  <script src="actions.js"></script>
+
+
 </body>
 
 </html>

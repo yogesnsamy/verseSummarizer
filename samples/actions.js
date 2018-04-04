@@ -25,9 +25,9 @@ window.addEventListener("message", function (event) {
   var rawdata = JSON.stringify(event.data.verseApiData);
   var link_limit = 3;
   var email_content_length_limit = 1000;
-  var api = [];
-  api.push("https://openwhisk.ng.bluemix.net/api/v1/web/ecodadmi%40us.ibm.com_cheoksv-dev/default/cheok-nlu.json");
-  api.push("https://openwhisk.ng.bluemix.net/api/v1/web/ecodadmi%40us.ibm.com_cheoksv-dev/default/cheok-ta.json");
+  // var api = [];
+  // api.push("https://openwhisk.ng.bluemix.net/api/v1/web/ecodadmi%40us.ibm.com_cheoksv-dev/default/cheok-nlu.json");
+  // api.push("https://openwhisk.ng.bluemix.net/api/v1/web/ecodadmi%40us.ibm.com_cheoksv-dev/default/cheok-ta.json");
   // start of processEmail function call -------------------------------------------
   processEmail(rawdata, function (email) {
     if (email) {
@@ -36,8 +36,12 @@ window.addEventListener("message", function (event) {
       // jsonNode.innerText = 'Sender: ' + email.mailContent.context.sender.displayName + '\n';
       // jsonNode.innerText += 'Subject: ' + email.mailContent.context.subject + '\n\n';
 
+      // var data = {
+      //   "textToAnalyze": email.mailContent.context.body, //.substr(0, email_content_length_limit),
+      //   "type": 'text'
+      // };
       var data = {
-        "textToAnalyze": email.mailContent.context.body.substr(0, email_content_length_limit),
+        "textToAnalyze": email.mailContent.context.body,
         "type": 'text'
       };
       $.ajax({
@@ -48,8 +52,8 @@ window.addEventListener("message", function (event) {
         })
         .done(function (result) {
 
-          // jsonNode.innerText += 'Original email content: \n' + email.mailContent.context.body + '\n';
-          // jsonNode.innerText += 'content analysis result:\n' + JSON.stringify(result, null, 2) + '\n\n';
+          //  jsonNode.innerText += 'Original email content: \n' + email.mailContent.context.body + '\n';
+          //  jsonNode.innerText += 'content analysis result:\n' + JSON.stringify(result, null, 2) + '\n\n';
           writeResult(result, email);
 
           //process the links
@@ -97,7 +101,9 @@ window.addEventListener("message", function (event) {
 
       //remove all the html tags, newlines, white spaces
       var p = '';
-      p = a.replace(/<[^>]*>/g, '').replace(/\\n/g, '').replace(/(&nbsp;)/g, ' ').replace(/\s\s+/g, '').replace(/\\t/g, '');
+      // p = a.replace(/<[^>]*>/g, '').replace(/\\n/g, '').replace(/(&nbsp;)/g, ' ').replace(/\s\s+/g, '').replace(/\\t/g, '');
+      // p = a.replace(/<[^>]*>/g, ' ').replace(/\\n/g, ' ').replace(/( )/g, ' ').replace(/\s\s+/g, ' ').replace(/\\t/g, '');
+      p = a.replace(/<[^>]*>/g, ' ').replace(/\\n/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s\s+/g, ' ').replace(/\\t/g, '');
 
       //Parse the content in json format
       var mailContent = JSON.parse(p);
