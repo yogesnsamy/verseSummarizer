@@ -14,63 +14,137 @@
   <link href="actions.css" rel="stylesheet">
   <link href="bootstrap.min.css" rel="stylesheet">
   <!-- <link rel="stylesheet" href="./fontawesome/"> -->
-  <!-- <script src="actions.js"></script> -->
+  <script src="templatedLink.js"></script>
 </head>
 
 <body>
   <div id="landing-header">
-    <h3>Verse Summarizer</h3>
+    <p id="VerseSummarizerTitle">
+      <strong>Verse Summarizer - Unread Mails Summary</strong>
+    </p>
     <div class="container">
-      <h2>Contextual Classes</h2>
-      <p>Contextual classes can be used to color table rows or table cells. The classes that can be used are: .active, .success,
-        .info, .warning, and .danger.</p>
+      <!-- <h3>Mails Summary</h3> -->
+      <!-- <p>Contextual classes can be used to color table rows or table cells. The classes that can be used are: .active, .success,
+        .info, .warning, and .danger.</p> -->
       <table class="table">
-        <thead>
-          <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Email</th>
-          </tr>
-        </thead>
         <tbody>
-          <tr>
-            <td>Default</td>
-            <td>Defaultson</td>
-            <td>def@somemail.com</td>
+
+          <tr class="neutral">
+            <td>
+              <span style="background-color: #C70039;" class="badge"> Anger </strong>
+              </span>
+            </td>
+            <td>Eric Schnatterly</td>
+            <td>
+              <a href=# "><strong>RE: The missed project implementation deadline!</strong></a></td>
+            <td>2.26 PM</td>
           </tr>
-          <tr class="success">
-            <td>Success</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
+          <tr class="danger "><td><span style="background-color: #C70039; " class="badge "> Anger </strong></span> </td>
+            <td>Arleena Frm</td>
+            <td><a href=#"><strong>The missed flight</strong></a>
+            </td>
+            <td>1.57 PM</td>
           </tr>
           <tr class="danger">
-            <td>Danger</td>
-            <td>Moe</td>
-            <td>mary@example.com</td>
+            <td>
+              <span style="background-color: #FF5733
+                ;" class="badge"> Disgust </strong>
+              </span>
+            </td>
+            <td>WCE Enablement - SLA</td>
+            <td>
+              <a href=# "><strong>Watson Customer Engagement Sales</strong></a></td>
+            <td>1.25 PM</td>
           </tr>
-          <tr class="info">
-            <td>Info</td>
-            <td>Dooley</td>
-            <td>july@example.com</td>
+          <tr class="warning ">
+              <td>
+                  <span style="background-color: #FFC300 ; " class="badge "> Fear </strong>
+                  </span>
+                </td>
+            <td>Size AP</td>
+            <td><a href=#"><strong>Fw: IBM W3 Engagement Survey Due!</strong></a>
+            </td>
+            <td>12.35 PM</td>
           </tr>
           <tr class="warning">
-            <td>Warning</td>
-            <td>Refs</td>
-            <td>bo@example.com</td>
+            <td>
+              <span style="background-color:    #f4d03f;" class="badge"> Sad </strong>
+              </span>
+            </td>
+            <td>Putri Hasliza</td>
+            <td>
+              <a href=# "><strong>WCE organizational changes to support our continued evolution</strong></a></td>
+            <td>12.23 PM</td>
+          </tr>
+          
+          <tr class="active ">
+              <td>
+                  <span style="background-color: #196f3d ; " class="badge "> Joy </strong>
+                  </span>
+                </td>
+            <td>Bluemine</td>
+            <td><a href=#"><strong>How will digital transformation reshape the global economy?</strong></a>
+            </td>
+            <td>9.45 AM</td>
           </tr>
           <tr class="active">
-            <td>Active</td>
-            <td>Activeson</td>
-            <td>act@example.com</td>
+            <td>
+              <span style="background-color:     #196f3d ;" class="badge"> Joy </strong>
+              </span>
+            </td>
+            <td>Arleena From iTrain</td>
+            <td>
+              <a href=# "><strong>8 future-proof skills you should 'grab' in this challenging economy.</strong></a></td>
+              <td>6.19 AM</td>
+            </tr>
+            <tr class="active ">
+                <td>
+                    <span style="background-color: #196f3d ; " class="badge "> Joy </strong>
+                    </span>
+                  </td>
+                <td>IBM Event Central</td>
+                <td><a href=#"><strong>WCE Sales All Hands: Special Invite</strong></a>
+            </td>
+            <td>1.29 AM</td>
           </tr>
+          <tr class="active">
+            <td>
+              <span style="background-color:     #196f3d ;" class="badge"> Joy </strong>
+              </span>
+            </td>
+            <td>Brian A.Hagaman</td>
+            <td>
+              <a href=# "><strong>How to save your Sequence of Events to Sales Connect(SOE)</strong></a></td>
+                  <td>Yesterday, 11.50 PM</td>
+                </tr>
+                <tr class="active ">
+                    <td>
+                        <span style="background-color: #196f3d ; " class="badge "> Joy </strong>
+                        </span>
+                      </td>
+                    <td>Albert Ooi</td>
+                    <td><strong><a href=#">Request - MOE DXM</strong></a>
+            </td>
+            <td>Yesteday 12.57 PM</td>
+          </tr>
+          <tr class="active">
+            <td>
+              <span style="background-color:     #196f3d ;" class="badge"> Joy </strong>
+              </span>
+            </td>
+            <td>Arleena From iTrain</td>
+            <td>
+              <a href=# "><strong>8 future-proof skills you should 'grab' in this challenging economy.</strong></a></td>
+                      <td>Yesterday 11.32 AM</td>
+                    </tr>
         </tbody>
       </table>
     </div>
-    <a href="#" class="btn btn-primary btn-sm" id="closeWindow">Close this window</a>
-    <!-- <a href="#" class="btn btn-primary btn-sm" onclick="window.close();">Close this window</a> -->
+    <a href="# " class="btn btn-primary btn-sm " id="closeWindow ">Close this window</a>
+    <!-- <a href="# " class="btn btn-primary btn-sm " onclick="window.close(); ">Close this window</a> -->
   </div>
 
-  <ul class="slideshow">
+  <ul class="slideshow ">
     <li></li>
     <li></li>
     <li></li>
@@ -78,9 +152,9 @@
     <li></li>
   </ul>
   <!-- backend:
-  <div id="status"></div>
-  <div id="query-str"></div>
-  <div id="messages">
+  <div id="status "></div>
+  <div id="query-str "></div>
+  <div id="messages ">
     <pre id='json'></pre>
   </div> -->
 

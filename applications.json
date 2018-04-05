@@ -68,8 +68,8 @@
               "title": "Verse Summarizer Mail Summary",
               "location": "window",
               "renderParams": {
-                "width": "900",
-                "height": "500"
+                "width": "1000",
+                "height": "600"
               }
             }                        
           ]

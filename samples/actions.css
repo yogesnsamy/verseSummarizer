@@ -15,6 +15,10 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+#emoticon{
+  height:30;
+  width:30;
+}
 /* Now we need to position the welcome text and view all campgrounds buton
     We set the z-index to 1 so all of the elements inside the landing-header div will be in front of the background images
 
