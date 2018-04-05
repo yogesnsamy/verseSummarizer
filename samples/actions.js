@@ -1,6 +1,14 @@
-/**
- * Print out Verse API data for all the action samples
- */
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector('#closeWindow').addEventListener('click', close);
+
+});
+
+function close() {
+  // window.close();
+  chrome.tabs.getCurrent(function(tab) {
+      chrome.tabs.remove(tab.id, function() { });
+  });
+} 
 window.addEventListener("message", function (event) {
   // Add check for the event origin here
   console.log(event);
@@ -119,15 +127,15 @@ window.addEventListener("message", function (event) {
 
   function writeResult(result, email) {
     console.log("writing result..." + result);
-    document.getElementById("mailSubject").innerHTML = "<strong>"+email.mailContent.context.sender.displayName+":</strong> "+email.mailContent.context.subject;// +  " <i class=\"far fa-smile\"></i>";
+    document.getElementById("mailSubject").innerHTML = "<em>"+email.mailContent.context.sender.displayName+"</em>: <strong>"+email.mailContent.context.subject+"</strong>";// +  " <i class=\"far fa-smile\"></i>";
     // document.getElementById("mailSender").innerHTML = "<h5>From: " + email.mailContent.context.sender.displayName + "</h5>";
     //-------
     document.getElementById("emotionSummary").innerHTML = "<table class=\"table\"> <tbody> <tr> <td><p>Joy <code>"+((result.emotion.document.emotion.joy)*100).toFixed(2)+"%</code></p><p> <img src=\"img/src/joy.gif\" height=\"70\" width=\"70\"> </p></td><td><p>Anger <code>"+((result.emotion.document.emotion.anger)*100).toFixed(2)+"%</code></p><p> <img src=\"img/src/anger.gif\" height=\"70\" width=\"70\"> </p></td><td><p>Disgust <code>"+((result.emotion.document.emotion.disgust)*100).toFixed(2)+"%</code></p><p> <img src=\"img/src/disgust.gif\" height=\"70\" width=\"70\"> </p></td><td><p>Sadness <code>"+((result.emotion.document.emotion.sadness)*100).toFixed(2)+"%</code></p><p> <img src=\"img/src/sadness.gif\" height=\"70\" width=\"70\"> </p></td><td><p>Fear <code>"+((result.emotion.document.emotion.fear)*100).toFixed(2)+"%</code></p><p> <img src=\"img/src/fear.png\" height=\"70\" width=\"70\"> </p></td></tr></tbody> </table>"
     //----------
     document.getElementById("keywordSummary").innerHTML += "<ul class=\"list-group\">";
     document.getElementById("keywordSummary").innerHTML += "<li class=\"list-group-item\"><strong>Keywords and Relevance <span style=\"background-color: #379ef5;\" class=\"badge\">   %   </strong></span></li>";
-    for (let i = 0; i < 5; i++) {
-      document.getElementById("keywordSummary").innerHTML += "<li class=\"list-group-item\">" + result.keywords[i].text + " <span style=\"background-color: #379ef5;\" class=\"badge\">" + ((result.keywords[i].relevance) * 100).toFixed(2) + "%</span></li>";
+    for (let i = 0; i < 10; i++) {
+      document.getElementById("keywordSummary").innerHTML += "<li id=\"kwSummary\" class=\"list-group-item\">" + result.keywords[i].text + " <span style=\"background-color: #379ef5;\" class=\"badge\">" + ((result.keywords[i].relevance) * 100).toFixed(2) + "%</span></li>";
     }
     document.getElementById("keywordSummary").innerHTML += "</ul>";
   }

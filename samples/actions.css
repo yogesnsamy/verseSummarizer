@@ -2,8 +2,17 @@
 /* <!-- background text and slider code credit to Ian Schoonover @ https://github.com/nax3t/background-slider --> */
 /* set the body's background-color to black */
 
+#keywordSummary {
+  font-size:1.2rem;
+}
 body {
   background-color: #000;
+}
+#VerseSummarizerTitle {
+  font-size: 2.5rem;
+  background: -webkit-linear-gradient(#00008B, #6183A6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Now we need to position the welcome text and view all campgrounds buton
@@ -128,7 +137,7 @@ body {
 /* Document level adjustments */
 
 html {
-  font-size: 17px;
+  font-size: 100%;
   font-family: Arial, sans-serif;
 }
 
@@ -138,18 +147,6 @@ body {
 
 h1 {
   margin-top: 0;
-}
-
-@media (max-width: 900px) {
-  html {
-    font-size: 15px;
-  }
-}
-
-@media (max-width: 400px) {
-  html {
-    font-size: 13px;
-  }
 }
 
 /* Modules will scale with document */
@@ -172,18 +169,6 @@ l1 {
 
 /* Type will scale with modules */
 
-h1 {
-  font-size: 3em;
-}
-
-h2 {
-  font-size: 2.5em;
-}
-
-h3 {
-  font-size: 2em;
-}
-
 /* layout */
 
 .content {
@@ -202,19 +187,3 @@ h3 {
   border-top: solid 1px #ccc;
 }
 
-@media (max-width: 900px) {
-  .content {
-    width: 60%;
-  }
-  .sidebar {
-    width: 40%;
-  }
-}
-
-@media (max-width: 400px) {
-  .content,
-  .sidebar {
-    float: none;
-    width: auto;
-  }
-}

@@ -16,7 +16,7 @@
               "location": "window",
               "renderParams": {
                 "width": "900",
-                "height": "500"
+                "height": "800"
               }
             },
             {
@@ -34,7 +34,7 @@
               "location": "window",
               "renderParams": {
                 "width": "580",
-                "height": "550"
+                "height": "700"
               }
             }
           ]
@@ -51,39 +51,37 @@
       "Verse"
     ]
   },
-
   {
-    "name": "Live Text Widget Multiple Actions Sample",
-    "title": "The Live Text Widget Sample with Multiple Actions",
-    "description": "The sample shows how to create multiple Live Text actions for the same Live Text in Verse",
+    "name": "Widget Samples",
+    "title": "Widget Samples",
+    "description": "This samples demonstrates using the widget extension point",
     "extensions": [{
-        "name": "Live Text Widget Action Sample One",
-        "ext_id": "com.ibm.verse.livetext.sample.one",
-        "type": "com.ibm.verse.ext.liveText",
+        "name": "Person Action Sample",
+        "type": "com.ibm.verse.ext.widget",
         "payload": {
-          "text": "Live Text Widget Action One",
-          "href": "${extensionPath}/${1}/sample1.html?tel=${2}",
-          "recognizer": "Path:(live-text), Tel:([0-9]{8}).*",
-          "location": "window",
-          "renderParams": {
-            "width": "800",
-            "height": "400"
-          }
+          "url": "${extensionPath}/samples/templatedLink.html",
+          "features": ["core"],
+          "actions": [{
+              "id": "com.ibm.verse.ext.person.action",
+              "object": "com.ibm.appreg.object.person",
+              "text": "Verse Summarizer Mail Summary",
+              "title": "Verse Summarizer Mail Summary",
+              "location": "window",
+              "renderParams": {
+                "width": "900",
+                "height": "500"
+              }
+            }                        
+          ]
         }
       },
       {
-        "name": "Live Text Widget Action Sample Two",
-        "ext_id": "com.ibm.verse.livetext.sample.two",
-        "type": "com.ibm.verse.ext.liveText",
-        "payload": {
-          "text": "Live Text Widget Action Two",
-          "href": "${extensionPath}/live-text/sample2.html?tel=${2}",
-          "recognizer": "Path:(live-text), Tel:([0-9]{8}).*",
-          "location": "tab"
-        }
+        "type": "com.ibm.verse.ext.namePicker",
+        "name": "Custom name picker in mail compose",
+        "url": "${extensionPath}/custom-name-picker/index.html",
+        "title": "Add Contact"
       }
     ],
-    "payload": {},
     "services": [
       "Verse"
     ]
